@@ -1,0 +1,8 @@
+E:\Приложения\VisualStudio\Проэкты\ШАГ\.NET C#\дз 13.03\дз 13.03\obj\Debug\дз 13.03.csproj.AssemblyReference.cache
+E:\Приложения\VisualStudio\Проэкты\ШАГ\.NET C#\дз 13.03\дз 13.03\obj\Debug\дз 13.03.csproj.SuggestedBindingRedirects.cache
+E:\Приложения\VisualStudio\Проэкты\ШАГ\.NET C#\дз 13.03\дз 13.03\obj\Debug\дз 13.03.csproj.CoreCompileInputs.cache
+E:\Приложения\VisualStudio\Проэкты\ШАГ\.NET C#\дз 13.03\дз 13.03\bin\Debug\дз 13.03.exe.config
+E:\Приложения\VisualStudio\Проэкты\ШАГ\.NET C#\дз 13.03\дз 13.03\bin\Debug\дз 13.03.exe
+E:\Приложения\VisualStudio\Проэкты\ШАГ\.NET C#\дз 13.03\дз 13.03\bin\Debug\дз 13.03.pdb
+E:\Приложения\VisualStudio\Проэкты\ШАГ\.NET C#\дз 13.03\дз 13.03\obj\Debug\дз 13.03.exe
+E:\Приложения\VisualStudio\Проэкты\ШАГ\.NET C#\дз 13.03\дз 13.03\obj\Debug\дз 13.03.pdb
