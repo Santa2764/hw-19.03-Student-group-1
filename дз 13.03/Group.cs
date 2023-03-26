@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,88 +9,100 @@ public class Student    // класс Студент
     private int age;
     private double gpa;
 
-    public string getFirstName() { return firstName; }
-    public void setFirstName(string name)
+    public string FirstName
     {
-        bool isOk = false;
-        while (!isOk)
+        set
         {
-            try
+            bool isOk = false;
+            while (!isOk)
             {
-                if (name.Length == 0)
-                    throw new Exception();
-                else isOk = true;
+                try
+                {
+                    if (value.Length == 0)
+                        throw new Exception();
+                    else isOk = true;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Wrong first name!");
+                    value = Console.ReadLine();
+                }
+                firstName = value;
             }
-            catch (Exception)
-            {
-                Console.WriteLine("Wrong first name!");
-                name = Console.ReadLine();
-            }
-            firstName = name;
         }
+        get { return firstName; }
     }
 
-    public string getLastName() { return lastName; }
-    public void setLastName(string name)
+    public string LastName
     {
-        bool isOk = false;
-        while (!isOk)
+        set
         {
-            try
+            bool isOk = false;
+            while (!isOk)
             {
-                if (name.Length == 0)
-                    throw new Exception();
-                else isOk = true;
+                try
+                {
+                    if (value.Length == 0)
+                        throw new Exception();
+                    else isOk = true;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Wrong last name!");
+                    value = Console.ReadLine();
+                }
+                lastName = value;
             }
-            catch (Exception)
-            {
-                Console.WriteLine("Wrong last name!");
-                name = Console.ReadLine();
-            }
-            lastName = name;
         }
+        get { return lastName; }
     }
 
-    public int getAge() { return age; }
-    public void setAge(int age)
+    public int Age
     {
-        bool isOk = false;
-        while (!isOk)
+        set
         {
-            try
+            bool isOk = false;
+            while (!isOk)
             {
-                if (age <= 17 || age > 25)
-                    throw new Exception();
-                else isOk = true;
+                try
+                {
+                    if (value <= 17 || value > 25)
+                        throw new Exception();
+                    else isOk = true;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Wrong age!");
+                    value = Int32.Parse(Console.ReadLine());
+                }
+                this.age = value;
             }
-            catch (Exception)
-            {
-                Console.WriteLine("Wrong age!");
-                age = Int32.Parse(Console.ReadLine());
-            }
-            this.age = age;
         }
+        get { return age; }
     }
 
-    public double getGPA() { return gpa; }
-    public void setGPA(double gpa)
+    public double GPA
     {
-        bool isOk = false;
-        while (!isOk)
+        set
         {
-            try
+            bool isOk = false;
+            while (!isOk)
             {
-                if (gpa <= 0 || gpa > 12)
-                    throw new Exception();
-                else isOk = true;
+                try
+                {
+                    if (value <= 0 || value > 12)
+                        throw new Exception();
+                    else isOk = true;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Wrong GPA!");
+                    value = double.Parse(Console.ReadLine());
+                }
+                this.gpa = value;
             }
-            catch (Exception)
-            {
-                Console.WriteLine("Wrong GPA!");
-                gpa = double.Parse(Console.ReadLine());
-            }
-            this.gpa = gpa;
         }
+        get { return gpa; }
     }
 
     public Student()
@@ -120,7 +132,8 @@ public class Student    // класс Студент
     {
         return base.Equals(obj);
     }
-    public static bool operator ==(Student st1, Student st2) {
+    public static bool operator ==(Student st1, Student st2)
+    {
         if (st1.gpa == st2.gpa) return true;
         else return false;
     }
@@ -172,7 +185,7 @@ public class Group    // класс Группа студентов
         Console.WriteLine("Students:");
         for (int i = 0; i < students.Count; i++)
         {
-            Console.WriteLine($"{i + 1}. {students[i].getLastName()} {students[i].getFirstName()}");
+            Console.WriteLine($"{i + 1}. {students[i].LastName} {students[i].FirstName}");
         }
     }
 
@@ -185,7 +198,7 @@ public class Group    // класс Группа студентов
     {
         //this.name = name;
         bool isOk = false;
-        while (!isOk) 
+        while (!isOk)
         {
             try
             {
@@ -199,7 +212,7 @@ public class Group    // класс Группа студентов
                 name = Console.ReadLine();
             }
             this.name = name;
-        } 
+        }
 
         //this.specialization = specialization;
         isOk = false;
@@ -256,10 +269,10 @@ public class Group    // класс Группа студентов
             }
         }
 
-        students[index].setLastName(lastName);
-        students[index].setFirstName(firstName);
-        students[index].setAge(age);
-        students[index].setGPA(gpa);
+        students[index].LastName=lastName;
+        students[index].FirstName=firstName;
+        students[index].Age=age;
+        students[index].GPA=gpa;
     }
 
     public void TransferStudent(int index, Group group)
@@ -272,7 +285,7 @@ public class Group    // класс Группа студентов
     {
         for (int i = 0; i < students.Count; i++)
         {
-            if (students[i].getGPA() < 3.0)
+            if (students[i].GPA < 3.0)
             {
                 students.RemoveAt(i);
                 i--;
@@ -283,13 +296,13 @@ public class Group    // класс Группа студентов
     public void ExpelWorstStudent()
     {
         int worstIndex = 0;
-        double worstGPA = students[0].getGPA();
+        double worstGPA = students[0].GPA;
         for (int i = 0; i < students.Count; i++)
         {
-            if (students[i].getGPA() < worstGPA)
+            if (students[i].GPA < worstGPA)
             {
                 worstIndex = i;
-                worstGPA = students[i].getGPA();
+                worstGPA = students[i].GPA;
             }
         }
         students.RemoveAt(worstIndex);
